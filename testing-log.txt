@@ -1,0 +1,31 @@
+Change Log (from Testing):
+
+-------------------------------------
+
+- Fixed input validation for box dimensions
+Issue: Program accepted values outside the client-given 5–100 cm range.
+Fix: Added a GetValidDimension() method to handle validation.
+
+- Fixed input validation for phone numbers
+Issue: Program accepted any input as a number (including letters/symbols)
+Fix: Added GetValidPhoneNumber() function; Now requires 7–11 digits for input.
+
+- Improved island selection
+Issue: Chunky confusing way of finding island in array
+Fix: Used a LINQ method for matching; (Also converted user input to uppercase for consistancy)
+
+- Corrected receipt formatting
+Issue: Costs displayed without 2 decimal places.
+Fix: Used formatting (F2) for standard price-format output.
+
+- Added GST calculation
+Issue: Didn't calculate a total with GST
+Fix: Total now shows both subtotal and total with GST in the receipt for clarity.
+
+- User experience refinements
+Issue: Various issues that made the terminal hard to read
+Fix: See Below >>>
+	- Added header dashes for styling
+	- Added clear screen between steps to maintain focus on the current question
+	- Added checkpoints to make sure the input info is correct for the user information
+	- Added option to calculate another item without restarting program.
