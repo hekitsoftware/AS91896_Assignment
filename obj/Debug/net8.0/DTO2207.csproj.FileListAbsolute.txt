@@ -1,0 +1,14 @@
+d:\Josh Files\GAME\DTO2207\bin\Debug\net8.0\DTO2207.exe
+D:\Josh Files\GAME\DTO2207\bin\Debug\net8.0\DTO2207.deps.json
+D:\Josh Files\GAME\DTO2207\bin\Debug\net8.0\DTO2207.runtimeconfig.json
+d:\Josh Files\GAME\DTO2207\bin\Debug\net8.0\DTO2207.dll
+d:\Josh Files\GAME\DTO2207\bin\Debug\net8.0\DTO2207.pdb
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.GeneratedMSBuildEditorConfig.editorconfig
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.AssemblyInfoInputs.cache
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.AssemblyInfo.cs
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.csproj.CoreCompileInputs.cache
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.dll
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\refint\DTO2207.dll
+d:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.pdb
+D:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\DTO2207.genruntimeconfig.cache
+D:\Josh Files\GAME\DTO2207\obj\Debug\net8.0\ref\DTO2207.dll
