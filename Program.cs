@@ -13,12 +13,20 @@ namespace DTO2207
 
     public class UserInfo
     {
-        //initialising all user variables as blank
+        //Initialising all user variables (as requested)
         public string Name { get; set; }
         public string Surname { get; set; }
         public string Address { get; set; }
         public string PhoneNumber { get; set; }
         public string returnCost { get; set; }
+        public string SelectedIsland { get; set; } // < This variable is used in the receipt at the end
+
+        //Initialising additional variables
+        public string ItemDesc { get; set; }
+        public string OrderNumber { get; set; }
+        // ^ This "OrderNumber" is an added feature I think will improve the request...
+        // However, as you will see later in the code, right now it is just for show/demo purposes, but could
+        // later be connected to an API to handle actual order numbers for the client/company.
     }
 
     public class IslandsData
@@ -36,9 +44,9 @@ namespace DTO2207
 
     class MainProgram
     {
-        //creating our external class references inside of the main class (MainProgram)
         static BoxInfo box = new BoxInfo();
         static UserInfo user = new UserInfo();
+        // ^ Creating references to our external classes
 
         static void Main(string[] args) // < This is the first method to be run when the Terminal application opens
         {
@@ -59,7 +67,37 @@ namespace DTO2207
             Console.WriteLine("------------------------------");
             Console.WriteLine($"Welcome {user.Name}! Please begin by filling out some basic customer info below...");
             Console.WriteLine("");
+
+            //Call the method to get the user's basic shipping info
             getUserInfo();
+
+            // Call the method to get the package dimensions
+            GetBoxDimensions();
+
+            // Call the method to calculate the return cost for the user
+            CalculateReturnCost(islandOptions);
+
+            // User Send-Off + Receipt printing
+            Console.WriteLine("------------------------------");
+            Console.WriteLine($"Thank you {user.Name} for using ONLINZ for your package returning needs.");
+            Console.WriteLine("Here is your recepit:");
+
+            // Call the method to print the recepit
+            PrintReceipt();
+
+            Console.WriteLine("Would you like to calculate the return cost for another item? (Y/N)");
+            string continueChoice = Console.ReadLine().ToUpper();
+            if (continueChoice == "Y" || continueChoice == "YES")
+            {
+                // Restart the process if the user chooses to calculate again
+                Main(args);
+            }
+            else
+            {
+                Console.WriteLine("Thank you for using the ONLINZ Return-Cost Calculator!");
+                // Exit the program
+            }
+
         }
 
         static void getUserInfo()
@@ -75,6 +113,9 @@ namespace DTO2207
             Console.WriteLine("------------------------------");
             user.PhoneNumber = GetValidPhoneNumber();
             Console.Clear();
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("Please breifly describe the ITEM you wish to return in 6 words or less:");
+            user.ItemDesc = Console.ReadLine().ToUpper();
 
             //Print a copy of the entered data to check if the user has entered their data correctly...
             Console.WriteLine("------------------------------");
@@ -146,7 +187,7 @@ namespace DTO2207
                 }
             } while (true);
         }
-        
+
         // Function to calculate the return cost for our user
         static void CalculateReturnCost(IslandsData[] islands)
         {
@@ -170,6 +211,8 @@ namespace DTO2207
 
             if (selectedIsland != null)
             {
+                user.SelectedIsland = selectedIsland.islandName;
+
                 // Calculate the final return cost based on the selected island's multiplier
                 double finalCost = baseRate * selectedIsland.rateMulti;
 
@@ -183,6 +226,25 @@ namespace DTO2207
             {
                 Console.WriteLine("Invalid island name entered. Please ensure you type it correctly (North Island, South Island, or Stewart Island).");
             }
+        }
+
+        static void PrintReceipt()
+        {
+            Console.WriteLine("----------");
+            Console.WriteLine($"NAME: {user.Name} {user.Surname}");
+            Console.WriteLine($"ITEM TO RETURN: {user.ItemDesc}");
+            Console.WriteLine($"PHONE NUMBER: {user.PhoneNumber}");
+            Console.WriteLine($"SENDER ADDRESS: {user.Address}");
+            Console.WriteLine($"ISLAND OF RESIDENCE: {user.SelectedIsland}");
+            Console.WriteLine($""); // Linebreak
+            Console.WriteLine($"SUBTOTAL: {user.returnCost}");
+
+            // I wanted to allow the program to cacluate GST for the user for convenience...
+            double returnCost = Convert.ToDouble(user.returnCost); // < Convert the return cost subtotal to a double
+            double totalWithGST = returnCost + (returnCost * 0.15); // < Add on the GST to calculate the Total
+
+            Console.WriteLine($"TOTAL (+GST): {totalWithGST:F2}"); // < Print the total cost, using the same F2 formatting style as before
+            Console.WriteLine("----------");
         }
     }
 }

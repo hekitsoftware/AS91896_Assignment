@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Josh Files\\GAME\\DTO2207\\DTO2207.csproj",
+      "projectUniqueName": "D:\\Josh Files\\GAME\\AS91896_Assignment\\DTO2207.csproj",
       "projectName": "DTO2207",
-      "projectPath": "D:\\Josh Files\\GAME\\DTO2207\\DTO2207.csproj",
+      "projectPath": "D:\\Josh Files\\GAME\\AS91896_Assignment\\DTO2207.csproj",
       "packagesPath": "C:\\Users\\WinAdmin\\.nuget\\packages\\",
-      "outputPath": "D:\\Josh Files\\GAME\\DTO2207\\obj\\",
+      "outputPath": "D:\\Josh Files\\GAME\\AS91896_Assignment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\WinAdmin\\AppData\\Roaming\\NuGet\\NuGet.Config",
