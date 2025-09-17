@@ -1,0 +1,5 @@
+------------------------------------------------------------------------
+How to run program:
+
+- Naviagte to AS91896_Assignment\bin\Debug\net8.0
+- Run "DTO2207.exe"

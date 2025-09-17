@@ -1,5 +1,5 @@
+-------------------------------------
 Change Log (from Testing):
-
 -------------------------------------
 
 - Fixed input validation for box dimensions
@@ -29,3 +29,7 @@ Fix: See Below >>>
 	- Added clear screen between steps to maintain focus on the current question
 	- Added checkpoints to make sure the input info is correct for the user information
 	- Added option to calculate another item without restarting program.
+
+-------------------------------------
+GitHub Repo: https://github.com/hekitsoftware/AS91896_Assignment
+-------------------------------------
